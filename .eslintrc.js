@@ -3,7 +3,8 @@ module.exports = {
   root: true,
   parserOptions: {
     "ecmaVersion": 6,
-    parser: 'babel-eslint'
+    parser: "babel-eslint",
+    sourceType: "module" // 代码使用了使用了ECMAScript模块
   },
   env: {
     browser: true,
@@ -17,16 +18,25 @@ module.exports = {
   ],
   // required to lint *.vue files
   plugins: [
-    'vue'
+    'vue',
+    "html"
   ],
+  settings: {
+    "import/resolver": {
+      webpack: {
+        config: 'build/webpack.base.conf.js'
+      }
+    }
+  },
   // add your custom rules here
   rules: {
     // allow async-await
     'generator-star-spacing': 'off',
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    indent: ["warn", 2],
-    quotes: ["warn", "double"],
-    semi: ["warn", "always", { "omitLastInOneLineBlock": true }]
+    "indent": ["warn", 2],
+    "quotes": "off",
+    "semi": ["warn", "always", { "omitLastInOneLineBlock": true }],
+    "space-before-function-paren": "off"
   }
 }

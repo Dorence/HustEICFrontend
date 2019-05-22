@@ -21,10 +21,16 @@
       <el-row :gutter="12">
         <el-col :span="11" :xs="22" :offset="1">
           <el-row class="card-viewer" :gutter="10">
-            <el-col :span="12" v-for="item in cardView" :key="item.title">
-              <el-card shadow="hover">
+            <el-col :span="12" v-for="(item, idx) in cardView" :key="item.title">
+              <el-card
+                :class="'wow bounceIn'+ (idx % 2 ?'Right':'Left')"
+                data-wow-duration="1.2s"
+                data-wow-delay="1s"
+                shadow="hover"
+              >
                 <img :src="item.img" class="image">
                 <div class="bottom clearfix">
+                  {{idx}}
                   <el-button round>{{item.title}}</el-button>
                 </div>
               </el-card>
@@ -51,8 +57,11 @@
 import CardBox from "./components/CardBox";
 import IndexFooter from "./components/IndexFooter";
 import IconList from "./components/IconList";
+import { WOW } from "wowjs";
 
 const sr = "../static/img/"; // dir to static images
+console.log(WOW);
+
 export default {
   name: "App",
   components: { CardBox, IconList, IndexFooter },
