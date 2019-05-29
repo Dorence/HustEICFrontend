@@ -12,7 +12,7 @@
     "test": "npm run unit && npm run e2e",
     "lint": "eslint --ext .js,.vue src test/unit test/e2e/specs",
     "build": "node build/build.js",
-    "re": "cnpm i element-ui -D && cnpm i babel-plugin-component -D"
+    "re": "cnpm i webpack-dev-server -D && cnpm i element-ui -D && cnpm i babel-plugin-component -D"
   },
   "dependencies": {
     "babel-plugin-component": "latest",
@@ -52,10 +52,10 @@
     "eslint-plugin-promise": "^3.4.0",
     "eslint-plugin-standard": "^3.0.1",
     "eslint-plugin-vue": "^4.0.0",
-    "extract-text-webpack-plugin": "^3.0.0",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "file-loader": "^1.1.4",
     "friendly-errors-webpack-plugin": "^1.6.1",
-    "html-webpack-plugin": "^2.30.1",
+    "html-webpack-plugin": "^3.2.0",
     "jest": "^22.0.4",
     "jest-serializer-vue": "^0.3.0",
     "nightwatch": "^0.9.12",
@@ -73,18 +73,18 @@
     "uglifyjs-webpack-plugin": "^1.1.1",
     "url-loader": "^0.5.8",
     "vue-jest": "^1.0.2",
-    "vue-loader": "^13.3.0",
+    "vue-loader": "latest",
     "vue-style-loader": "^3.0.1",
     "vue-template-compiler": "^2.5.2",
-    "webpack": "^3.6.0",
-    "webpack-bundle-analyzer": "^2.9.0",
-    "webpack-dev-server": "^2.9.1",
-    "webpack-merge": "^4.1.0",
-    "wowjs": "^1.1.3"
+    "webpack": "^4.0.0",
+    "webpack-bundle-analyzer": ">=3.3.2",
+    "webpack-cli": "^3.3.2",
+    "webpack-dev-server": "^3.4.1",
+    "webpack-merge": "^4.1.0"
   },
   "engines": {
     "node": ">= 6.0.0",
-    "npm": ">= 3.0.0"
+    "npm": ">= 6.0.0"
   },
   "browserslist": [
     "> 1%",
